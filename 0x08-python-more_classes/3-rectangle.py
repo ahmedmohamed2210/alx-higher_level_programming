@@ -45,24 +45,24 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-        def area(self):
-            """clac the area of rectangle"""
-            return (self.__width * self.__height)
+    def area(self):
+        """clac the area of rectangle"""
+        return (self.__width * self.__height)
 
-        def perimeter(self):
-            """Returns the perimeter of the rectangle"""
-            if self.__width == 0 or self.__height == 0:
-                return (0)
-            return ((self.__width * 2) + (self.__height * 2))
+    def perimeter(self):
+        """Returns the perimeter of the rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
 
-        def __str__(self) -> str:
-            """present a schemetic diagram of rectangle"""
-            if self.__width == 0 or self.__height == 0:
-                return ("")
-            rectangle = ""
-            for colum in range(self._height):
-                for row in range(self.__width):
-                    rectangle += "#"
-                if colum < self.__height - 1:
-                    rectangle += "\n"
-            return (rectangle)
+    def __str__(self) -> str:
+        """present a schemetic diagram of rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        rectangle = ""
+        for colum in range(self._height):
+            for row in range(self.__width):
+                rectangle += "#"
+            if colum < self.__height - 1:
+                rectangle += "\n"
+        return (rectangle)
