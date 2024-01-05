@@ -18,12 +18,12 @@ class Rectangle:
             
 
     @property
-    def width(self)
+    def width(self):
         """retrieves width attribute"""
         return self.__width
 
     @width.setter
-    def width(self, value)
+    def width(self, value):
         """sets width attribute"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -32,7 +32,7 @@ class Rectangle:
         self.__width = value
 
     @property
-    def height(self)
+    def height(self):
         """retrieves height attribute"""
         return self.__height
 
