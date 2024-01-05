@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""this is creation of rectangle class"""
+"""A class that defines a rectangle"""
 
 
 class Rectangle:
-    """this represent a rectangle"""
+    """this represents a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """initialize rectangle class
-    args:
-        width: the width of rectangle
-        height: the height of rectangle
-    raise:
-        ValueError: if size not intger
-        TypeError: if size less than 0
-    """
+        """Initializing this rectangle class
+        Args:
+            width: represents the width of the rectangle
+            height: represents the height of the rectangle
+        Raises:
+            TypeError: if size is not integer
+            ValueError: if size is less than zero
+        """
         self.width = width
         self.height = height
 
@@ -46,7 +46,7 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """clac the area of rectangle"""
+        """Returns the area of the rectangle"""
         return (self.__width * self.__height)
 
     def perimeter(self):
@@ -56,13 +56,13 @@ class Rectangle:
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self) -> str:
-        """present a schemetic diagram of rectangle"""
+        """presents a diagram of the rectangle defined for an object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle = ""
-        for colum in range(self._height):
+        for column in range(self.__height):
             for row in range(self.__width):
                 rectangle += "#"
-            if colum < self.__height - 1:
+            if column < self.__height - 1:
                 rectangle += "\n"
         return (rectangle)
