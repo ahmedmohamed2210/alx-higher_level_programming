@@ -1,39 +1,26 @@
 #!/usr/bin/python3
+""""
+
+This module contains a function that prints a name
+
 """
 
-This module defines a matrix division function
 
-"""
-
-
-def matrix_divided(matrix, div):
-    """This function divides all elements of a matrix by a given number
+def say_my_name(first_name, last_name=""):
+    '''This function prints name (<first name> <last name>)
 
     Args:
-        matrix: A list of lists (matrix)- members can be of type ints or floats
-        div: Number to be used for the division (can be a float or an integer)
+        first_name (str): The fisrt name to be printed
+        last_name (str): The last name to be printed
+
     Raises:
-        TypeError: If the matrix contains non-numbers
-        TypeError: If the matrix contains rows of different sizes
-        TypeError: If div is not an int or float
-        ZeroDivisionError: If div is 0
-    Returns:
-        A new matrix which represents the result of the divisions
-    """
-    if (not isinstance(matrix, list) or matrix == [] or
-            not all(isinstance(row, list) for row in matrix) or
-            not all((isinstance(ele, int) or isinstance(ele, float))
-                    for ele in [num for row in matrix for num in row])):
-        raise TypeError("matrix must be a matrix (list of lists) of "
-                        "integers/floats")
+        TypeError: If either the first_name and last_name are not strings
 
-    if not all(len(row) == len(matrix[0]) for row in matrix):
-        raise TypeError("Each row of the matrix must have the same size")
+    '''
 
-    if not isinstance(div, int) and not isinstance(div, float):
-        raise TypeError("div must be a number")
+    if not isinstance(first_name, str):
+        raise TypeError("first_name must be a string")
 
-    if div == 0:
-        raise ZeroDivisionError("division by zero")
-
-    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
+    if not isinstance(last_name, str):
+        raise TypeError("last_name must be a string")
+    print(f"My name is {first_name} {last_name}")
