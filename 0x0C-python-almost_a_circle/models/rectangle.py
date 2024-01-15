@@ -64,7 +64,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
 
-        self._x = value
+        self.__x = value
 
     @y.setter
     def y(self, value):
@@ -83,12 +83,18 @@ class Rectangle(Base):
 
     def display(self):
         """desplay the rectangle with #"""
+        for y in range(self.y):
+            print("")
         for row in range(self.__height):
+            for x in range(self.x):
+                print(" ", end="")
             for column in range(self.__width):
+
                 print("#", end="")
             print()
 
     def __str__(self):
         """Defines a format for the string representation of the class"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
-            {self.__width}/{self.__height}"
+{self.__width}/{self.__height}"
+
